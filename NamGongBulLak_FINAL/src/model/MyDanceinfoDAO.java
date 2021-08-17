@@ -123,14 +123,15 @@ public class MyDanceinfoDAO {
 	 		return list;
 	 	}
 	
-	public ArrayList<mdiDTO> select(String id) {
+	public ArrayList<MyDanceinfoDTO> select(String id) {
 
 		conn();
-		mdiDTO dto = null;
+		MyDanceinfoDTO dto = null;
+		ArrayList<MyDanceinfoDTO> list = new ArrayList<MyDanceinfoDTO>();
 
 		try {
 
-			String sql = "SELECT D.ALBUM_TITLE, D.SONG_TITLE, M.SONG_SINGER,M.USER_ACCURACY, M.PLAY_DATE FROM MYDANCEINFOS M, DANCEINFOS D WHERE M.ID = (SELECT ID FROM MEMBERS WHERE ID = ?)";
+			String sql = "SELECT d.album_filename 앨범파일, d.song_title 노래이름, d.song_singer 가수, RANK() OVER(ORDER BY MAX(m.user_accuracy) DESC) 순위, MAX(m.user_accuracy) 점수, m.play_date 날짜 FROM mydanceinfos m , danceinfos d where m.song_seq = d.song_seq AND m.id = ? GROUP BY m.id, d.album_filename, d.song_title, d.song_singer, m.play_date";
 
 			psmt = conn.prepareStatement(sql);
 			psmt.setString(1, id);
@@ -138,13 +139,14 @@ public class MyDanceinfoDAO {
 			rs = psmt.executeQuery();
 
 			while (rs.next()) {
-				String albumTitle = rs.getString(1);
+				String album_filename = rs.getString(1);
 				String song_title = rs.getString(2);
 				String song_singer = rs.getString(3);
-				int userAcc = rs.getInt(4);
-				String play_date = rs.getString(5);
+				int rank = rs.getInt(4);
+				int user_accuracy = rs.getInt(5);
+				String play_date = rs.getString(6);
 
-				dto = new mdiDTO(albumTitle, play_date, song_title, song_singer, userAcc);
+				dto = new MyDanceinfoDTO(album_filename, song_title, song_singer, rank, user_accuracy, play_date);
 				list.add(dto);
 			}
 		} catch (Exception e) {

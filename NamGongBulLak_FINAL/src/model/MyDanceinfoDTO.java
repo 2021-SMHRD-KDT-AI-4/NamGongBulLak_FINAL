@@ -14,6 +14,37 @@ public class MyDanceinfoDTO {
 	private int article_seq;
 	private int play_seq;
 	
+	private String album_filename;
+	private int rank;
+	
+	public MyDanceinfoDTO(String album_filename, String song_title, String song_singer,
+			 int rank, int user_accuracy, String play_date) {
+		super();
+		this.play_date = play_date;
+		this.song_title = song_title;
+		this.song_singer = song_singer;
+		this.user_accuracy = user_accuracy;
+		this.album_filename = album_filename;
+		this.rank = rank;
+	}
+
+	public int getRank() {
+		return rank;
+	}
+
+	public void setRank(int rank) {
+		this.rank = rank;
+	}
+
+	public String getAlbum_filename() {
+		return album_filename;
+	}
+
+	public void setAlbum_filename(String album_filename) {
+		this.album_filename = album_filename;
+	}
+
+
 	public MyDanceinfoDTO(String id, String premium, String play_date, String song_title, String song_singer,
 			int user_accuracy, String user_filename, String season, int song_seq, int article_seq, int play_seq) {
 		super();

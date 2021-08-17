@@ -203,49 +203,51 @@
 				<!-- 테이블 -->
 				<%
 					MyDanceinfoDAO danceDAO = new MyDanceinfoDAO();
-					ArrayList<mdiDTO> list = danceDAO.select(id);
+					ArrayList<MyDanceinfoDTO> list = danceDAO.select(id);
 					
 				%>
-				<div style="height: 35.5rem;  text-align: center; border-radius: 1em; background-color: rgba(207, 207, 207, 0.5); color: black; overflow: overlay;">
+				<div style="width: 57rem; height: 35.5rem; border-radius: 1rem; background-color: rgba(207, 207, 207, 0.7); color: white; overflow: overlay;">
 					<!-- 테이블 제목 -->
-					<div style="font-size: 1.5rem; font-family: 'GmarketSansTTFBold'; display: grid; grid-template-columns: 5rem 10rem 18.75rem 4.5rem 8rem 10.75rem;">
-						<div style="border-bottom: 3px solid white; color:white;"><strong>번호</strong></div>
-						<div style="border-bottom: 3px solid white; color:white;"><strong>앨범</strong></div>
-						<div style="border-bottom: 3px solid white; color:white; text-align:left"><strong>곡정보</strong></div>
-						<div style="border-bottom: 3px solid white; color:white;"><strong>순위</strong></div>
-						<div style="border-bottom: 3px solid white; color:white;"><strong>점수</strong></div>
-						<div style="border-bottom: 3px solid white; color:white;"><strong>날짜</strong></div>
+					<div style="height: 2.5rem; font-size: 1.2rem; font-family: 'GmarketSansTTFBold'; display: grid; grid-template-columns: 5rem 10rem 18.75rem 5rem 7.5rem 10.75rem; background-color: #707070; border-bottom: 0.25rem solid white;">
+						<div style="display: flex; justify-content: flex-end; align-items: center;">번호</div>
+						<div></div>
+						<div style="display: flex; justify-content: left; align-items: center;">곡정보</div>
+						<div style="display: flex; justify-content: center; align-items: center;">순위</div>
+						<div style="display: flex; justify-content: center; align-items: center;">점수</div>
+						<div style="display: flex; justify-content: center; align-items: center;">날짜</div>
 					</div>
+					<%
+						for (int i=0; i<list.size(); i++) {
+					%>
 					<!-- 테이블 내용 -->
-					<div style="font-size: 1.2rem; font-family: 'GmarketSansTTFBold'; color:white; display: grid; grid-template-columns: 5rem 10rem 18.75rem 4.5rem 8rem 10.75rem; ">
-						<!-- 반복 1 -->
-						<%
-							for (int i=0; i<list.size(); i++) {
-						%>
-						<!-- 번호 -->
-						<div style="border-bottom: 1px solid white; margin-top:25px;"><%= i+1 %></div>
-						<!-- 앨범 이미지 -->
-						<div style="border-bottom: 1px solid white;">
-							<img src="./static/img/la.jpg"
-								style="height: 5rem; border: 0.0625rem solid #fff; ">
+					<div style="height: 7.5rem; font-size: 1.2rem; color:white; display: grid; grid-template-columns: 5rem 10rem 18.75rem 5rem 7.5rem 10.75rem; border-bottom: 0.0625rem solid white;">
+							<!-- 번호 -->
+							<div style="display: flex; justify-content: flex-end; align-items: center;"><%= i+1 %></div>
+							<!-- 앨범 이미지 -->
+							<div>
+								<div style="width: 5rem; height: 5rem; margin: 1.25rem 2.5rem;">
+									<img src="./static/img/<%= list.get(i).getAlbum_filename() %>" style="width: 100%; height: 100%; border: 0.0625rem solid white;">
+								</div>
+							</div>
+							<!-- 노래 제목/가수/앨범명 -->
+							<div style="display: flex; justify-content: left; align-items: center;">
+								<%= list.get(i).getSong_title() %><br>
+								<%= list.get(i).getSong_singer() %>
+							</div>
+							<!-- 순위 -->
+							<div style="display: flex; justify-content: center; align-items: center;">
+								<%= list.get(i).getRank() %>
+							</div>
+							<!-- 점수 -->
+							<div style="display: flex; justify-content: center; align-items: center;">
+								<%= list.get(i).getUser_accuracy() %>
+							</div>
+							<!-- 점수 경신 날짜 -->
+							<div style="display: flex; justify-content: center; align-items: center;">
+								<%= list.get(i).getPlay_date() %>
+							</div>
 						</div>
-						<!-- 노래 제목/가수/앨범명 -->
-						<div style="border-bottom: 1px solid white; margin-top:15px; text-align:left;">
-							<%= list.get(i).getSong_title() %><br><span style="font-size: 1.2rem; font-size:15px">
-							<%= list.get(i).getSong_singer()  %></span>
-						</div>
-						<!-- 순위 -->
-						<div style="border-bottom: 1px solid white; margin-top:25px; font-size:20px">
-						14
-						</div>
-						<!-- 점수 -->
-						<div style="border-bottom: 1px solid white; margin-top:25px; font-size:20px">
-						<%= list.get(i).getUser_accuracy() %>
-						</div>
-						<!-- 점수 경신 날짜 -->
-						<div style="border-bottom: 1px solid white; margin-top:25px; font-size:20px">2021.08.04</div>
-						<% } %>
-					</div>
+					<% } %>
 				</div>
 			</div>
 			<div style="width: 100%; height: 50rem; margin: 0 1rem;">
