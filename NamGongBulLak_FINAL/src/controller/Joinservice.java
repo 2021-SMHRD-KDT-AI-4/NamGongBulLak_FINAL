@@ -25,8 +25,8 @@ public class Joinservice extends HttpServlet {
 			request.setCharacterEncoding("EUC-KR");
 
 			// 사진이 저장될 경로 								   실제경로를 가져옴(저장시킬 경로)
-			String savePath = request.getServletContext().getRealPath("profile_img");
-			
+			//String savePath = request.getServletContext().getRealPath("data\\profile_image");
+			String savePath = "C:\\Users\\SMHRD\\git\\NamGongBulLak_FINAL\\NamGongBulLak_FINAL\\WebContent\\data\\profile_image";
 			System.out.println(savePath);
 			
 			// 이미지 크기 지정
@@ -39,15 +39,14 @@ public class Joinservice extends HttpServlet {
 			// DefaultFileRenamePolicy : 파일명 뒤에 숫자를 붙여서 이름 중복을 제거해주는 클래스(같은 이름일 때 뒤에 1,2... 이런식으로)
 			MultipartRequest multi = new MultipartRequest(request, savePath, maxSize, encoding, new DefaultFileRenamePolicy());
 			
-			String id = request.getParameter("id");
-			String pw = request.getParameter("pw");
-			String nickname = request.getParameter("nickname"); 
-			String country = request.getParameter("country");
-			String share_agree = request.getParameter("share_agree");
+			String id = multi.getParameter("id");
+			String pw = multi.getParameter("pw");
+			String nickname = multi.getParameter("nickname"); 
+			String country = multi.getParameter("country");
+			String share_agree = multi.getParameter("share_agree");
 			String profile_image = URLEncoder.encode(multi.getFilesystemName("profile_image"), "EUC-KR");
 			
 			System.out.println("id : " + id + " / pw : " + pw + " / nickname : " + nickname + " / country : " +country + " / share_agree : " +share_agree + " / profile_image : "  +profile_image);
-			System.out.println("??????????");
 
 			System.out.println("filename : " + profile_image);
 
@@ -59,11 +58,9 @@ public class Joinservice extends HttpServlet {
 			
 			if(cnt > 0) {
 				System.out.println("회원가입 완료");
-				System.out.println("??????????");
 				response.sendRedirect("loginKR.jsp");
 			}else {
 				System.out.println("가입 실패");
-				System.out.println("??????????");
 				response.sendRedirect("joinKR.jsp");
 			}
 		

@@ -1,14 +1,15 @@
 <%@page import="model.MemberDTO"%>
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- ÀÓÆ÷Æ® -->
+    <!-- ì„í¬íŠ¸ -->
     <link rel="stylesheet" href="./static/css/style.css" />
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
     <title>PlayDance</title>
 </head>
 <style>
@@ -41,7 +42,7 @@ if(song_data!=null){
 		try{
 			data = request.getParameter("data").split("/");
 		}catch(NullPointerException e){
-			System.out.println("data°¡ ¾ø½À´Ï´Ù");
+			System.out.println("dataê°€ ì—†ìŠµë‹ˆë‹¤");
 		}
 		
 	%>
@@ -50,34 +51,33 @@ if(song_data!=null){
 <!-- jjjjjjjjjjjjjjjj -->
 <input type="hidden" id="songdata" value="<%=singer%>/<%=title%>/<%=albumImg%>">
 <!-- jjjjjjjjjjjjjjjj -->
-
     <div style="background-color: rgba(0,0,0,0.5); width: 100%; height: 100vh;">
-        <!-- »ó´Ü ³×ºñ°ÔÀÌ¼Ç -->
+        <!-- ìƒë‹¨ ë„¤ë¹„ê²Œì´ì…˜ -->
         <div id="navi"></div>
-        <!-- ¸ŞÀÎ ³»¿ë -->
+        <!-- ë©”ì¸ ë‚´ìš© -->
         <div style="height: 1.25rem;"></div>
         <div style="height: 35.625rem; display: flex; flex-direction: row; font-family: 'Bangtan';">
-            <!-- ´í½º ¿µ»ó -->
+            <!-- ëŒ„ìŠ¤ ì˜ìƒ -->
             <div style="height: 100%; width: 100%;">
-                <!-- ´í½º ¿µ»ó ³ë·¡ ÀÌ¸§ -->
+                <!-- ëŒ„ìŠ¤ ì˜ìƒ ë…¸ë˜ ì´ë¦„ -->
                 <!-- jjjjjjjjjjjjjjjj -->
                 <div style="height: 3rem"><%=singer %> - <%=title %></div>
                
                
-                <!-- ´í½º È­¸é -->
+                <!-- ëŒ„ìŠ¤ í™”ë©´ -->
                 <!-- jjjjjjjjjjjjjjjj -->
                 <div style="background-color: black; height: 32.625rem; margin: 0 1rem;">
                    <!--  <video id="vod" src="./static/video/butter1.mp4" autoplay muted style="width: 928px; height: 522px"></video> -->
                 	
-                	 <video id="vod" src="./static/video/<%=title %>.mp4" width="928px" height="522px" muted = "muted"></video>
-                	
+                	 <video id="vod" src="./static/video/<%=title %>.mp4" width="928px" height="522px"></video>
+                	 
                 </div>
             </div>
-            <!-- »ç¿ëÀÚ È­¸é -->
+            <!-- ì‚¬ìš©ì í™”ë©´ -->
             <div style="height: 100%; width: 100%;">
-                <!-- »ç¿ëÀÚ ÀÌ¸§ -->
-                <div style="height: 3rem"><%= memInfo.getId() %>´ÔÀÇ È­¸é</div>
-                <!-- Ä· È­¸é -->
+                <!-- ì‚¬ìš©ì ì´ë¦„ -->
+                <div style="height: 3rem"><%= memInfo.getId() %>ë‹˜ì˜ í™”ë©´</div>
+                <!-- ìº  í™”ë©´ -->
                 <div style="background-color: black; height: 32.625rem; margin: 0 1rem;">
                     <!-- <video id="cam"  autoplay muted style="width: 928px; height: 522px"></video> -->
                   	<video id="cam"  width="928px" height="522px"autoplay muted></video>
@@ -85,25 +85,31 @@ if(song_data!=null){
                 </div>
             </div>
         </div>
-        <div style="height: 3rem;"></div>
-        <div style="background-color: red; height: 10.875rem; display: flex; flex-direction: row; margin: 0 3.5rem; align-items: center;">
-            <div style="width: 50%;">
-                ¹öÆ°
-                <input type="button" value="È­¸é ÀüÈ¯">
-                <input type="button" value="´Ù½ÃÇÏ±â">
-                <input type="button" value="³ª°¡±â">
-            </div>
-            Perfect, Great, Good, Miss
-            <div style="width: 50%;">Smile~:)</div>
+        <div style="height: 1.25rem;"></div>
+        
+        <div style="height: 10.75rem; display: flex; flex-direction: row; margin: 0 3.5rem; align-items: center;">
+           	<div style="width: 43.75rem;"></div>
+           	<div style="width: 26.25rem; margin-right: 2.75rem">
+           		<div style="height: 6.25rem"></div>
+           		<div style="height: 4.5rem; display: flex; font-family: 'GmarketSansTTFBold'; font-size: 2.8rem;">
+           			<div style="width: 13.75rem; height: 4.5rem;">
+           				SCORE :
+           				</div>
+           			<div style="width: 12.5rem; height: 4.5rem;">
+           				<p id="p" style="margin-block-start: 0; margin-block-end: 0;"></p>
+           			</div>
+           		</div>
+           	</div>
+	        <div style="width: 18.25rem; height: 10.75rem;">
+	        	<div style="width: 18.25rem; height: 3.25rem;"></div>
+	        	<div style="width: 18.25rem; height: 3rem;">
+	        		<img id="barImg" src="./static/img/playdance/miss_bar.png" style="width: 100%; height: 100%;">
+	        	</div>
+	        </div>
+	        <div style="width: 10rem; height: 10rem;">
+	        	<img id="smileImg" src="./static/img/playdance/miss.png" style="width: 100%; height: 100%;">
+	        </div>
         </div> 
-         <div style="background-color: blue; height: 3rem; margin: 0 3.5rem; display: flex; flex-direction: row; align-items: center;"> -->
-            <!-- °ÔÀÌÁö¹Ù -->
-           <div style="width: 85%; background-color: yellow;">°ÔÀÌÁö¹Ù</div>
-            <!-- Á¡¼ö ÅØ½ºÆ®?ÀÌ¹ÌÁö? Ç¥Ãâ -->
-            <div style="width: 15%;">Score : 29.37</div>
-            <div style="width: 15%;">SCORE : <p id="p"></p></div>
-        <!-- </div> -->
-       </div>
     <!-- </div>
     
     	<div class="section">
@@ -120,7 +126,7 @@ if(song_data!=null){
 	<script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
     <script src="js/jquery-3.5.1.min.js"></script>
 	
-    <!-- ½Ç½Ã°£ Á¡¼ö ¶ç¿ö ÁÖ´Â ±â´É , ÇÃ¶ó½ºÅ© ¼­¹ö ¿­¾î¾ßÁö È°¼ºÈ­ µÊ-->
+    <!-- ì‹¤ì‹œê°„ ì ìˆ˜ ë„ì›Œ ì£¼ëŠ” ê¸°ëŠ¥ , í”Œë¼ìŠ¤í¬ ì„œë²„ ì—´ì–´ì•¼ì§€ í™œì„±í™” ë¨-->
       <script type="text/javascript">   
         
     	$(document).ready(function() {
@@ -129,48 +135,50 @@ if(song_data!=null){
         
 	</script>
     <script type="text/javascript">
+    let pd = document.getElementById("p") //ì •í™•ë„ ì‹¤ì‹œê°„ìœ¼ë¡œ ë³´ì—¬ì£¼ëŠ” ê³³
+	let barImg = document.getElementById("barImg");
+	let smileImg = document.getElementById("smileImg");
+	
+    var cnt = 0; //ì •í™•ë„ í‰ê· ì— í•„ìš”í•œ ë³€ìˆ˜
+    var cnt2 = 0; //ì˜ìƒ ëë‚˜ë©´ í˜ì´ì§€ ë„˜ê¸°ê²Œ í•˜ëŠ” ë³€ìˆ˜
     
-    let pd = document.getElementById("p") //Á¤È®µµ ½Ç½Ã°£À¸·Î º¸¿©ÁÖ´Â °÷
-    var cnt = 0; //Á¤È®µµ Æò±Õ¿¡ ÇÊ¿äÇÑ º¯¼ö
-    var cnt2 = 0; //¿µ»ó ³¡³ª¸é ÆäÀÌÁö ³Ñ±â°Ô ÇÏ´Â º¯¼ö
     
-    
-    //miss, good, great, perfect º¯¼ö
+    //miss, good, great, perfect ë³€ìˆ˜
     var m = 0;
     var gd = 0;
     var gr = 0;
     var per =0;
     
-    /* Ä«¸Ş¶ó Çã¿ëÇÏ±â & ½ºÆ®¸®¹Ö ½ÃÀÛ */
+    /* ì¹´ë©”ë¼ í—ˆìš©í•˜ê¸° & ìŠ¤íŠ¸ë¦¬ë° ì‹œì‘ */
     let vod = document.getElementById("vod");
     let cam = document.getElementById("cam");
     
     vod.play();
     cam.play();
     
-  	//cam ÁÂÇ¥°£ °Å¸®¸¦ ´ãÀ» º¯¼ö
+  	//cam ì¢Œí‘œê°„ ê±°ë¦¬ë¥¼ ë‹´ì„ ë³€ìˆ˜
     var c1 = 1;
     var c2 = 1;
     var c3 = 1;
     var c4 = 1;
 
-  	//vod ÁÂÇ¥°£ °Å¸®¸¦ ´ãÀ» º¯¼ö
+  	//vod ì¢Œí‘œê°„ ê±°ë¦¬ë¥¼ ë‹´ì„ ë³€ìˆ˜
     var v1 = 1;
     var v2 = 1;
     var v3 = 1;
     var v4 = 1;
 
-  	//ÁÂÇ¥°£ °Å¸®¸¦ ¹è¿­·Î ´ãÀ» º¯¼ö
+  	//ì¢Œí‘œê°„ ê±°ë¦¬ë¥¼ ë°°ì—´ë¡œ ë‹´ì„ ë³€ìˆ˜
     var v_distans = [];
     var c_distans = [];
     
-  	//Á¤È®µµ °á°ú¸¦ ´ãÀ» º¯¼ö
+  	//ì •í™•ë„ ê²°ê³¼ë¥¼ ë‹´ì„ ë³€ìˆ˜
     var result = 0;
     var sum = 0;
     var avg = 0;
     var res_avg = 0;
     
-    //Ä·ÀÌ ÀÖÀ¸¸é ÁÖ¼® »©°í ½ÇÇà
+    //ìº ì´ ìˆìœ¼ë©´ ì£¼ì„ ë¹¼ê³  ì‹¤í–‰
      function a(stream) {
     	 cam.srcObject = stream;
     	 cam.play();
@@ -185,7 +193,7 @@ if(song_data!=null){
         console.log("An error occurred! " + err);
     });
     
-    //½Ç½Ã°£À¸·Î Á¤È®µµ ÆÇº°ÇØÁÖ´Â ÇÔ¼ö
+    //ì‹¤ì‹œê°„ìœ¼ë¡œ ì •í™•ë„ íŒë³„í•´ì£¼ëŠ” í•¨ìˆ˜
     function onOpenCvReady1(){
     	
     	sum = 0;
@@ -202,15 +210,15 @@ if(song_data!=null){
     	let dst2 = new cv.Mat(height2, width2, cv.CV_8UC1); // 8 byte 1 channel
     	let cap1 = new cv.VideoCapture(vod);
     	let cap2 = new cv.VideoCapture(cam);
-    	const FPS = 6; // ÃÊ´ç ÇÁ·¹ÀÓ¼ö Á¶Àı -> Èæ¹é º¯È¯ ÇÁ·¹ÀÓ ·¹ÀÌÆ®, 7ÇÁ·¹ÀÓ ÀÌ»ó ÇÏ¸é ÇÃ¶ó½ºÅ© ¼­¹ö ÅÍÁü
+    	const FPS = 6; // ì´ˆë‹¹ í”„ë ˆì„ìˆ˜ ì¡°ì ˆ -> í‘ë°± ë³€í™˜ í”„ë ˆì„ ë ˆì´íŠ¸, 7í”„ë ˆì„ ì´ìƒ í•˜ë©´ í”Œë¼ìŠ¤í¬ ì„œë²„ í„°ì§
     	function processVideo() {
     		
     	    let begin = Date.now();
     	    cap1.read(src1);
     	    cap2.read(src2);
     	    //console.log(src1.data);
-    	    sendData1(src1.data); // ¼­¹ö·Î µ¥ÀÌÅÍ Àü¼Û
-    	    sendData2(src2.data); // ¼­¹ö·Î µ¥ÀÌÅÍ Àü¼Û
+    	    sendData1(src1.data); // ì„œë²„ë¡œ ë°ì´í„° ì „ì†¡
+    	    sendData2(src2.data); // ì„œë²„ë¡œ ë°ì´í„° ì „ì†¡
     	    cv.cvtColor(src1, dst1, cv.COLOR_RGBA2GRAY);
     	    cv.cvtColor(src2, dst2, cv.COLOR_RGBA2GRAY);
     	    //cv.imshow("canvasOutput1", dst1);
@@ -225,44 +233,53 @@ if(song_data!=null){
     	    	sum+=result;
     	    	avg = sum/cnt;
     	    	pd.innerHTML = avg*100;
+
     	    	cnt2 = 0;
     	 	    //console.log(result);
     	 	    //console.log(cnt);
     	 	    
     	 	    if(result<0.25){
     	 	    	m++;
+					barImg.setAttribute("src", "./static/img/playdance/miss_bar.png");
+					smileImg.setAttribute("src", "./static/img/playdance/miss.png");
     	 	    }else if(result<0.5){
     	 	    	gd++;
+					barImg.setAttribute("src", "./static/img/playdance/good_bar.png");
+					smileImg.setAttribute("src", "./static/img/playdance/good.png");
     	 	    }else if(result<0.75){
     	 	    	gr++;
+					barImg.setAttribute("src", "./static/img/playdance/great_bar.png");
+					smileImg.setAttribute("src", "./static/img/playdance/great.png");
     	 	    }else if(result<=1){
     	 	    	per++
+					barImg.setAttribute("src", "./static/img/playdance/perfect_bar.png");
+					smileImg.setAttribute("src", "./static/img/playdance/perfect.png");
     	 	    }
     	 	    
     	    }
     	   
-    	    //¿µ»ó³¡³ª´Â°ÍÀ» ÃøÁ¤ÇÏ±â À§ÇÑ cnt2 
+    	    //ì˜ìƒëë‚˜ëŠ”ê²ƒì„ ì¸¡ì •í•˜ê¸° ìœ„í•œ cnt2 
     	    if(isNaN(result)){
     	    	cnt2++;
-    	    	//ÃøÁ¤À» ÇÏÁö¸øÇÏ¸é ÆäÀÌÁö ³Ñ¾î°¡±â¶§¹®¿¡
-    	    	//°æ°í¹® Àû¾îÁÖ±â
+    	    	//ì¸¡ì •ì„ í•˜ì§€ëª»í•˜ë©´ í˜ì´ì§€ ë„˜ì–´ê°€ê¸°ë•Œë¬¸ì—
+    	    	//ê²½ê³ ë¬¸ ì ì–´ì£¼ê¸°
     	    }
     	    
-    	    //¿µ»ó³¡³ª°í µ¥ÀÌÅÍ¿Í ÆäÀÌÁö ÀÌµ¿
-    	    if(isNaN(result)&&cnt2==80){//14->10ÃÊ 7->5ÃÊ
+    	    //ì˜ìƒëë‚˜ê³  ë°ì´í„°ì™€ í˜ì´ì§€ ì´ë™
+    	    if(isNaN(result)&&cnt2==80){//14->10ì´ˆ 7->5ì´ˆ
     	    	var score = (avg*100).toFixed(1);
     	    	
-    	    // ÅÇÀ¸·Î ¿­±â
+    	    // íƒ­ìœ¼ë¡œ ì—´ê¸°
     	    //jjjjjjjjjjjjjjjjjjjjj
     	    	var songdata = document.getElementById("songdata").value;
 	    	    	//const url = "http://localhost:8081/Third_PJs/RankingService?score="+score+"&songdata="+songdata+"&mgdgrper="+m+"/"+gd+"/"+gr+"/"+per;
 	    			//const encoded = encodeURI(url);
 	    	    	//window.open(encoded);
     	    	console.log("1");
-    	    	const url1 = "http://localhost:8082/Third_PJ/resultScreen.jsp?score="+score+"&mgdgrper="+m+"/"+gd+"/"+gr+"/"+per+"&songdata="+songdata+"&num=1";
+    	    	const url1 = "http://59.0.236.167:8083/NamGongBulLak_FINAL/resultScreen.jsp?score="+score+"&mgdgrper="+m+"/"+gd+"/"+gr+"/"+per+"&songdata="+songdata+"&num=1";
                 const encoded1 = encodeURI(url1);
     	    	
-    	    	const url = "http://localhost:8082/Third_PJ/resultScreen.jsp?score="+score+"&mgdgrper="+m+"/"+gd+"/"+gr+"/"+per+"&songdata="+songdata;
+    	    	const url = "http://59.0.236.167:8083/NamGongBulLak_FINAL/resultScreen.jsp?score="+score+"&mgdgrper="+m+"/"+gd+"/"+gr+"/"+per+"&songdata="+songdata;
 				const encoded = encodeURI(url);
     	    		//window.open("http://localhost:8081/Third_PJs/RankingService?score="+score+"&mgdgrper="+m+"/"+gd+"/"+gr+"/"+per+"&songdata="+songdata);
     	    	
@@ -280,7 +297,7 @@ if(song_data!=null){
     	    	 
 			//jjjjjjjjjjjjjjjjj
 	
-    	    	 //»õÃ¢À¸·Î ¿­±â
+    	    	 //ìƒˆì°½ìœ¼ë¡œ ì—´ê¸°
     	    	/* window.open("http://localhost:8082/Third_PJ/RankingService?score="+score+"&mgdgrper="+m+"/"+gd+"/"+gr+"/"+per,"new","width="+screen.width+",height="+screen.height+",fullscreen=yes");  */
     	    	
     	    /* 	  setTimeout(function(){
@@ -301,7 +318,7 @@ if(song_data!=null){
     	setTimeout(processVideo, 0);
     }
     
-  	//°Å¸®°£ ºñÀ² ±¸ÇÏ´Â ÇÔ¼ö
+  	//ê±°ë¦¬ê°„ ë¹„ìœ¨ êµ¬í•˜ëŠ” í•¨ìˆ˜
     function ab(a,b){
     	if(a>=b){
     		return b/a;
@@ -310,7 +327,7 @@ if(song_data!=null){
     	}
     }
   	
-    //Á¤È®µµ °è»êÇÏ´Â ÇÔ¼ö
+    //ì •í™•ë„ ê³„ì‚°í•˜ëŠ” í•¨ìˆ˜
     function acc_cal(v_distans,c_distans){
     	  v1 = v_distans[0];
           v2 = v_distans[1];
@@ -331,8 +348,8 @@ if(song_data!=null){
           return acc_result
     }
     
-    let requestURL1 = "http://127.0.1.2:5000/test2"; //vod ÇÃ¶ó½ºÅ© ¼­¹ö ÁÖ¼Ò
-    let requestURL2 = "http://127.0.1.3:5000/test2"; //cam ÇÃ¶ó½ºÅ© ¼­¹ö ÁÖ¼Ò
+    let requestURL1 = "http://127.0.1.2:5000/test2"; //vod í”Œë¼ìŠ¤í¬ ì„œë²„ ì£¼ì†Œ
+    let requestURL2 = "http://127.0.1.3:5000/test2"; //cam í”Œë¼ìŠ¤í¬ ì„œë²„ ì£¼ì†Œ
     function sendData1(data){
     	const xhr1 = new XMLHttpRequest();
         xhr1.open('POST', requestURL1);
@@ -355,12 +372,12 @@ if(song_data!=null){
     
     </script>
     
-<!-- OpenCV·Î ½ÇÇàµÇ´Â ÀÚ¹Ù ½ºÅ©¸³Æ® -->
+<!-- OpenCVë¡œ ì‹¤í–‰ë˜ëŠ” ìë°” ìŠ¤í¬ë¦½íŠ¸ -->
 <script async src="https://docs.opencv.org/3.4.0/opencv.js" onload="onOpenCvReady1()" type="text/javascript"></script>
 <script type="text/javascript">
 
 
-<!-- »ç¿ëÀÚ webcam ³ìÈ­ºÎºĞ -->
+<!-- ì‚¬ìš©ì webcam ë…¹í™”ë¶€ë¶„ -->
 $(document).ready(function() {
 	
 	const videoOutput = document.getElementById('cam');
@@ -371,26 +388,26 @@ $(document).ready(function() {
 	let mediaRecorder = null;
 	let recordedMediaURL = null;
 
-	// À¯ÀúÀÇ Ä«¸Ş¶ó·Î ºÎÅÍ ÀÔ·ÂÀ» »ç¿ëÇÒ ¼ö ÀÖµµ·Ï ¿äÃ»
+	// ìœ ì €ì˜ ì¹´ë©”ë¼ë¡œ ë¶€í„° ì…ë ¥ì„ ì‚¬ìš©í•  ìˆ˜ ìˆë„ë¡ ìš”ì²­
 	navigator.mediaDevices.getUserMedia({
 		video : true
 	}).then(function(newMediaStream) {
 		mediaStream = newMediaStream;
 		
 		
-		// Ä«¸Ş¶óÀÇ ÀÔ·ÂÀ» ½Ç½Ã°£À¸·Î ºñµğ¿À ÅÂ±×¿¡¼­ È®ÀÎ
+		// ì¹´ë©”ë¼ì˜ ì…ë ¥ì„ ì‹¤ì‹œê°„ìœ¼ë¡œ ë¹„ë””ì˜¤ íƒœê·¸ì—ì„œ í™•ì¸
 		videoOutput.srcObject = mediaStream;
 		videoOutput.onloadedmetadata = function(e) {
 			videoOutput.play();
 		};
 			
 		let recordedChunks = [];
-		// 1.MediaStreamÀ» ¸Å°³º¯¼ö·Î MediaRecorder »ı¼ºÀÚ¸¦ È£Ãâ
+		// 1.MediaStreamì„ ë§¤ê°œë³€ìˆ˜ë¡œ MediaRecorder ìƒì„±ìë¥¼ í˜¸ì¶œ
 		mediaRecorder = new MediaRecorder(mediaStream, {
 			mimeType : 'video/webm;',
 		});
 
-		// 2. Àü´Ş¹Ş´Â µ¥ÀÌÅÍ¸¦ Ã³¸®ÇÏ´Â ÀÌº¥Æ® ÇÚµé·¯ µî·Ï
+		// 2. ì „ë‹¬ë°›ëŠ” ë°ì´í„°ë¥¼ ì²˜ë¦¬í•˜ëŠ” ì´ë²¤íŠ¸ í•¸ë“¤ëŸ¬ ë“±ë¡
 		mediaRecorder.ondataavailable = function(event) {
 			if (event.data && event.data.size > 0) {
 				console.log('ondataavailable');
@@ -398,10 +415,10 @@ $(document).ready(function() {
 			}
 		};
 
-	   // 3. ³ìÈ­ ÁßÁö ÀÌº¥Æ® ÇÚµé·¯ µî·Ï
+	   // 3. ë…¹í™” ì¤‘ì§€ ì´ë²¤íŠ¸ í•¸ë“¤ëŸ¬ ë“±ë¡
 		mediaRecorder.onstop = function() {
-			// createObjectURL·Î »ı¼ºÇÑ urlÀ» »ç¿ëÇÏÁö ¾ÊÀ¸¸é revokeObjectURL ÇÔ¼ö·Î Áö¿öÁà¾ßÇÕ´Ï´Ù.
-			// ±×·¸Áö ¾ÊÀ¸¸é ¸Ş¸ğ¸® ´©¼ö ¹®Á¦°¡ ¹ß»ıÇÕ´Ï´Ù.
+			// createObjectURLë¡œ ìƒì„±í•œ urlì„ ì‚¬ìš©í•˜ì§€ ì•Šìœ¼ë©´ revokeObjectURL í•¨ìˆ˜ë¡œ ì§€ì›Œì¤˜ì•¼í•©ë‹ˆë‹¤.
+			// ê·¸ë ‡ì§€ ì•Šìœ¼ë©´ ë©”ëª¨ë¦¬ ëˆ„ìˆ˜ ë¬¸ì œê°€ ë°œìƒí•©ë‹ˆë‹¤.
 			if (recordedMediaURL) {
 				URL.revokeObjectURL(recordedMediaURL);
 			}
@@ -417,31 +434,32 @@ $(document).ready(function() {
 		mediaRecorder.start();
 	});
 	
-	// ÆäÀÌÁö°¡ ´ÙÀ½ ÆäÀÌÁö·Î ³Ñ¾î°¡¸é ³ìÈ­¸¦ ÁßÁöÇÑ´Ù.
+	// í˜ì´ì§€ê°€ ë‹¤ìŒ í˜ì´ì§€ë¡œ ë„˜ì–´ê°€ë©´ ë…¹í™”ë¥¼ ì¤‘ì§€í•œë‹¤.
 	 window.onblur = blurMe;
 		
 		function blurMe(){
 			if (mediaRecorder) {
-				// 5. ³ìÈ­ ÁßÁö
+				// 5. ë…¹í™” ì¤‘ì§€
 				mediaRecorder.stop();
 			
 			}
 			
-			// ³ìÈ­ ÁßÁö°¡ ÀÏ¾î³­ ÈÄ 2ÃÊ µÚ ´Ù¿î·Îµå ÁøÇà
+			// ë…¹í™” ì¤‘ì§€ê°€ ì¼ì–´ë‚œ í›„ 2ì´ˆ ë’¤ ë‹¤ìš´ë¡œë“œ ì§„í–‰
 			setTimeout(function(){
-	        	// 2ÃÊ ÈÄ ÀÛµ¿ÇØ¾ßÇÒ ÄÚµå
+	        	// 2ì´ˆ í›„ ì‘ë™í•´ì•¼í•  ì½”ë“œ
 			          if (recordedMediaURL) {
 			            const link = document.createElement('a');
 			            console.log("link : ", link)
 			            document.body.appendChild(link);
 			            link.href = recordedMediaURL;
-			            link.download = 'record_UserCam_test.webm'; //ÀúÀåµÉ ³ìÈ­¿µ»ó ÆÄÀÏ¸í
+			            link.download = 'record_UserCam_test.webm'; //ì €ì¥ë  ë…¹í™”ì˜ìƒ íŒŒì¼ëª…
 			            link.click();
 			            //document.body.removeChild(link);
 			          }
 	        	}, 2000);
 		}
 });
+
 </script>
 </body>
 </html>

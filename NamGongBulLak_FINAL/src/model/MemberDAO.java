@@ -53,8 +53,6 @@ public class MemberDAO {
 			String sql = "insert into Members values(?,?,0,?,0,?,?,?,0,0,0,0)";
 			psmt = conn.prepareStatement(sql);
 			
-			System.out.println(dto.getShare_agree());
-
 			psmt.setString(1, dto.getId());
 			psmt.setString(2, dto.getPw());
 			psmt.setString(3, dto.getNickname());
@@ -233,8 +231,8 @@ public class MemberDAO {
 				int emblem_code = rs.getInt("emblem_code");
 				int user_ecode = rs.getInt("user_ecode");
 				
-				EmblemDTO dto = new EmblemDTO(id, emblem_code, user_ecode, emblem_name); // dto로 묶음
-				list.add(dto); // arraylist에 추가
+				EmblemDTO dto = new EmblemDTO(id, emblem_code, user_ecode, emblem_name); // dto濡� 臾띠쓬
+				list.add(dto); // arraylist�뿉 異붽�
 			}
 			
 		} catch (SQLException e) {

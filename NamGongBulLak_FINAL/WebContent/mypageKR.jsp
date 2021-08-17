@@ -50,8 +50,9 @@
 		MyDanceinfoDTO danceInfo = (MyDanceinfoDTO)session.getAttribute("danceinfo");
 		String[] data = null;
 		String data2 = null;
-		String[] embList = null;
+		String[] embList = embDAO.selectEmblem(id);
 		String[] selectedList = proDAO.selectedVirtualFace(id);
+		//System.out.println("1 : " + embList[0] + "/ 2 : " + embList[1] + "/ 3 : " + embList[2]);
 		try{
 			data = request.getParameter("data").split("/");
 			data2 = request.getParameter("data2");
@@ -61,13 +62,12 @@
 		
 		if(data!=null){
 			embDAO.updateEmblem(data[0], data[1], data[2], memInfo.getId());
-			embList = embDAO.selectEmblem(memInfo.getId());
+			embList = embDAO.selectEmblem(id);
 			proDAO.updateVirtualFace(data2, id);
 			selectedList = proDAO.selectedVirtualFace(id);
 		}
 	%>
-	<div
-		style="background-color: rgba(0, 0, 0, 0.5); width: 100%; height: 100vh;" class="container">
+	<div style="background-color: rgba(0, 0, 0, 0.5); width: 100%; height: 100vh;" class="container">
 		<!-- 상단 네비게이션 -->
 		<div id="navi"></div>
 		<!-- 메인 내용 -->
@@ -75,74 +75,115 @@
 		<div style="display: flex; flex-direction: row; height: 51rem;">
 			<div style="width: 100%; height: 51rem; margin: 0 1rem; ">
 				<!-- 사용자 프로필 -->
-				<div
-					style="height: 14.5rem; border-radius: 1em; background-color: rgba(207, 207, 207, 0.5); display: flex; flex-direction: row;">
-					<div style="width: 2.5rem; height: 100%;"></div>
+				<div style="width: 57rem; height: 14.5rem; border-radius: 1em; background-color: rgba(207, 207, 207, 0.5); display: flex; flex-direction: row;">
+					<div style="width: 2.5rem; height: 14.5rem;"></div>
 					<!-- 프로필 사진 -->
-					<div style="width: 12.5rem; height: 100%;">
-						<img src="D:\HTML_CSS\workspace\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\Third_PJ\profile_img\<%= memInfo.getProfile_img() %>"
-							style="height: 12.5rem; border: 0.0625rem solid #fff; border-radius: 50%; margin-top: 1rem;">
+					<div style="width: 12.5rem; height: 12.5rem;">
+						<img src="./data/profile_image/<%= memInfo.getProfile_img() %>"
+							style="width: 100%; height: 100%; border: 0.0625rem solid #fff; border-radius: 50%; margin-top: 1rem;">
 					</div>
-					<div style="width: 14rem; height: 100%; font-size:20px;">
-						<div style="margin-bottom: 20px; margin-top: 10px;">ID</div>
-						<div style="margin-bottom: 20px">NICKNAME</div>
-						<div style="margin-bottom: 25px">COUNTRY</div>
+					<div style="width: 14.25rem; height: 14.5rem; font-family: 'GmarketSansTTFBold';">
+						<div style="margin-bottom: 1.25rem; margin-top: 1.25rem;">ID</div>
+						<div style="margin-bottom: 1.25rem">NICKNAME</div>
+						<div style="margin-bottom: 1.25rem">COUNTRY</div>
 						<!-- 엠블럼 -->
-						<%if(data!=null){ 
-						
-						%>
-						<div>
-							<img src="./data/emblem/<%= embList[0] %>" style="height: 4.0rem;">
-							<img src="./data/emblem/<%= embList[1] %>" style="height: 4.0rem;">
-							<img src="./data/emblem/<%= embList[2] %>" style="height: 4.0rem;">
+						<div style="width: 14.25rem; display: flex; justify-content: center; align-items: center;">
+							<%
+								if(!(embList[0].equals("0"))){ 
+							%>
+								<div style="width: 2.5rem; height: 2.5rem;">
+									<img src="./static/img/emblem/<%= embList[0] %>" style="width: 100%; height: 100%;">
+								</div>
+							<%
+								} else {
+							%>
+								<div style="width: 2.5rem; height: 2.5rem; background-color: white; border: 0.0625rem solid black; border-radius: 0.5rem; color: black; font-size: 1.0rem; display: flex; justify-content: center; align-items: center;">
+									1
+								</div>
+							<%
+								}
+							%>
+							<%
+								if(!(embList[1].equals("0"))){ 
+							%>
+								<div style="width: 2.5rem; height: 2.5rem;">
+									<img src="./static/img/emblem/<%= embList[1] %>" style="width: 100%; height: 100%;">
+								</div>
+							<%
+								} else {
+							%>
+								<div style="width: 2.5rem; height: 2.5rem; background-color: white; border: 0.0625rem solid black; border-radius: 0.5rem; color: black; font-size: 1.0rem; display: flex; justify-content: center; align-items: center;">
+									2
+								</div>
+							<%
+								}
+							%>
+							<%
+								if(!(embList[2].equals("0"))){ 
+							%>
+								<div style="width: 2.5rem; height: 2.5rem;">
+									<img src="./static/img/emblem/<%= embList[2] %>" style="width: 100%; height: 100%;">
+								</div>
+							<%
+								} else {
+							%>
+								<div style="width: 2.5rem; height: 2.5rem; background-color: white; border: 0.0625rem solid black; border-radius: 0.5rem; color: black; font-size: 1.0rem; display: flex; justify-content: center; align-items: center;">
+									3
+								</div>
+							<%
+								}
+							%>
+                          	<%
+                          		if (!(selectedList[0] == null)) {
+                          	%>
+                          		<div style="width: 3.75rem; height: 3.75rem;">
+                            		<img src="./static/img/<%= selectedList[0] %>" style="height: 100%; width: 100%; border-radius: 1rem;">
+                          		</div>
+                          	<%
+                          		} else {
+                          	%>
+	                           	<div style="width: 3.75rem; height: 3.75rem; background-color: white; border: 0.0625rem solid black; border-radius: 1rem; color: black; font-size: 1.0rem; display: flex; justify-content: center; align-items: center;">
+	                           		버츄얼<br>페이스
+	                           	</div>
+                          	<%
+                          		}
+                          	%>
 						</div>
-						<%}else{ %>
-						<div style="display:flex">
-							<img src="./static/img/1.png" style="height: 4.0rem;">
-							<img src="./static/img/1.png" style="height: 4.0rem;">
-							<img src="./static/img/1.png" style="height: 4.0rem;">
-							<div style="width: 5rem; height: 5rem; background-color: white; border: 0.0625rem solid black; border-radius: 1rem; color: black; font-size: 1.0rem">
-                            	<%
-                            		if (!(selectedList[0] == null)) {
-                            	%>
-	                            	<img src="./static/img/<%= selectedList[0] %>" style="height: 100%; width: 100%; border-radius: 1rem">
-                            	<%
-                            		} else {
-                            	%>
-                            		<div style="margin-top: 0.5rem;">
-	                            		<span>장착한<br>버츄얼<br>페이스</span>
-                            		</div>
-                            	<%
-                            		}
-                            	%>
-                            </div>
-						</div>
-						<% } %>
 					</div>
-					
-					<div style="width: 12.75rem; height: 100%; font-size:20px;">
-						<div style="margin-bottom: 20px; margin-top: 10px;"><%= memInfo.getId() %></div>
-						<div style="margin-bottom: 20px"><%= memInfo.getNickname() %></div>
-						<div ><img src="./static/img/<%= memInfo.getCountry() %>.jpg" style="width: 8.5rem; height:5.5rem;"><%-- <%= country %> --%></div>
-						<div style="margin-top:1px"><%= memInfo.getCountry() %></div>
-						
+					<div style="width: 12.75rem; height: 14.5rem;">
+						<div style="margin-bottom: 1.25rem; margin-top: 1.25rem;"><%= memInfo.getId() %></div>
+						<div style="margin-bottom: 0.25rem"><%= memInfo.getNickname() %></div>
+						<div style="width: 8.5rem; height:5.5rem; margin: auto;"><img src="./static/img/<%= memInfo.getCountry() %>.jpg" style="width: 100%; height: 100%;"><%-- <%= country %> --%></div>
+						<div style="margin-top: 0.25rem"><%= memInfo.getCountry() %></div>
 					</div>
 					<div style="width: 15.25rem; height: 100%; ">
 						<!-- 회원등급 -->
-						<div style="margin-bottom: 10px; margin-top: 10px; font-size:23px;">일반회원</div>
-						<div style="margin-bottom: 15px;">
-							<input style="width: 10rem; border-radius: 25px; height: 2.5rem; background-color: black; color:white; font-size:23px; border: 0.0625rem solid white; margin: auto; display: flex; justify-content: center; align-items: center;" type="button" value="개인정보 수정" 
+						<div style="margin-bottom: 0.5rem; margin-top: 0.5rem;">
+							<%
+								if (memInfo.getPremium().equals("1")) {
+							%>
+									프리미엄회원
+							<%
+								} else {
+							%>
+									일반회원
+							<%
+								}
+							%>
+						</div>
+						<div style="margin-bottom: 0.5rem;">
+							<input style="width: 10rem; border-radius: 1rem; height: 2rem; background-color: black; color:white; border: 0.0625rem solid white; margin: auto; display: flex; justify-content: center; align-items: center; margin-bottom: 0.5rem; font-size: 1.2rem;" type="button" value="개인정보 수정" 
 								onclick="location.href='./edit_profile.jsp'">
 						</div>
-						<div style="margin-bottom: 15px;">
-							<input style="width: 10rem; border-radius: 25px; height: 2.5rem; background-color: black; color:white; font-size:23px; border: 0.0625rem solid white; margin: auto; display: flex; justify-content: center; align-items: center;" type="button" value="리플레이"
+						<div style="margin-bottom: 0.5rem;">
+							<input style="width: 10rem; border-radius: 1rem; height: 2rem; background-color: black; color:white; border: 0.0625rem solid white; font-size: 1.2rem;" type="button" value="리플레이"
 								onclick="location.href='./replay.jsp'">
 						</div>
 						<div>
 							<input type="checkbox" id="btnEmblem"> 
 							<label for="btnEmblem">
-								<div  style="width: 10rem; border-radius: 25px; height: 2.5rem; background-color: black; font-size:23px; border: 0.0625rem solid white; margin: auto; display: flex; justify-content: center; align-items: center;">
-								엠블럼수정
+								<div style="width: 10rem; border-radius: 1rem; height: 2rem; background-color: black; border: 0.0625rem solid white; margin: 0 auto; margin-bottom: 0.5rem; display: flex; justify-content: center; align-items: center; font-size: 1.2rem;">
+									엠블럼 수정
 								</div>
 							</label>
 							<div id="emblem"></div>
@@ -150,7 +191,9 @@
 						<div>
                             <input type="checkbox" id="btnVirtualFace">
                             <label for="btnVirtualFace">    
-                                <div style="width: 10rem; height: 2.5rem; background-color: black; border: 0.0625rem solid white; margin: auto; display: flex; justify-content: center; align-items: center; font-size: 1.2rem;">버츄얼페이스 수정</div>
+                                <div style="width: 10rem; border-radius: 1rem; height: 2rem; background-color: black; border: 0.0625rem solid white; margin: 0 auto; margin-bottom: 0.5rem; display: flex; justify-content: center; align-items: center; font-size: 1.2rem;">
+                                	버츄얼페이스 수정
+                                </div>
                             </label>
                             <div id="virtualface"></div>
                         </div>
@@ -160,7 +203,7 @@
 				<!-- 테이블 -->
 				<%
 					MyDanceinfoDAO danceDAO = new MyDanceinfoDAO();
-					ArrayList<mdiDTO> list = danceDAO.select(memInfo.getId());
+					ArrayList<mdiDTO> list = danceDAO.select(id);
 					
 				%>
 				<div style="height: 35.5rem;  text-align: center; border-radius: 1em; background-color: rgba(207, 207, 207, 0.5); color: black; overflow: overlay;">

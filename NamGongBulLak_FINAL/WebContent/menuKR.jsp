@@ -33,7 +33,6 @@
             <!-- 메뉴 -->
             <div id="menuList">
                 <div class="menuList" onclick="location.href='./mainKR.jsp'">HOME</div>
-                <div class="menuList" onclick="location.href='./mainKR.jsp'">ABOUT</div>
                 <div class="menuList" id="tutorial">TUTORIAL</div>
                 <div class="menuList" id="playDance">PLAY DANCE</div>
                 <div class="menuList" id="ranking">RANKING</div>
@@ -42,11 +41,18 @@
             </div>
             <!-- TUTORIAL -->
             <div id="tutorialList">
-                <div class="tutorialList">실용만점! 누구나 출 수 있는 '만능리듬' 튜토리얼!ccc</div>
-                <div class="tutorialList">몸치 탈출 성공하려면~! 꼭 알아야할 '무릎다운리듬' 튜토리얼!</div>
-                <div class="tutorialList">리듬타며 자연스럽게 걷는 법 '업리듬 스텝' 튜토리얼!</div>
-                <div class="tutorialList">아무 음악에나 자연스럽게 리듬 타는 법 '업리듬' 튜토리얼!</div>
-                <div class="tutorialList">가장 쉬운 리듬 기초 '다운리듬'</div>
+                <div class="tutorialList" onclick="location.href='https://www.youtube.com/watch?v=Lq3_T8PScs0&list=PLK4BtacKnc_7a0fim-hZbaeUHIJ8gJaLN'">실용만점! 누구나 출 수 있는 '만능리듬' 튜토리얼!</div>
+                <div class="tutorialList" onclick="location.href='https://www.youtube.com/watch?v=tjwCi6D1KVc&list=PLK4BtacKnc_7a0fim-hZbaeUHIJ8gJaLN&index=2'">몸치 탈출 성공하려면~! 꼭 알아야할 '무릎다운리듬' 튜토리얼!</div>
+                <div class="tutorialList" onclick="location.href='https://www.youtube.com/watch?v=E5-OuMCSmzc&list=PLK4BtacKnc_7a0fim-hZbaeUHIJ8gJaLN&index=3'">리듬타며 자연스럽게 걷는 법 '업리듬 스텝' 튜토리얼!</div>
+                <div class="tutorialList" onclick="location.href='https://www.youtube.com/watch?v=Lq3_T8PScs0&list=PLK4BtacKnc_7a0fim-hZbaeUHIJ8gJaLN&index=4'">아무 음악에나 자연스럽게 리듬 타는 법 '업리듬' 튜토리얼!</div>
+                <div class="tutorialList" onclick="location.href='https://www.youtube.com/watch?v=Lq3_T8PScs0&list=PLK4BtacKnc_7a0fim-hZbaeUHIJ8gJaLN&index=5'">가장 쉬운 리듬 기초 '다운리듬'</div>
+                <div class="tutorialList" onclick="location.href='https://www.youtube.com/watch?v=Lq3_T8PScs0&list=PLK4BtacKnc_7a0fim-hZbaeUHIJ8gJaLN&index=6'">층간소음 없는 집콕댄스 [ 리듬기초편 ]</div>
+                <div class="tutorialList" onclick="location.href='https://www.youtube.com/watch?v=Lq3_T8PScs0&list=PLK4BtacKnc_7a0fim-hZbaeUHIJ8gJaLN&index=7'">춤린이도 가능한 뉴잭스윙 스텝 10 | Bobby Brown - Every Little Step</div>
+                <div class="tutorialList" onclick="location.href='https://www.youtube.com/watch?v=Lq3_T8PScs0&list=PLK4BtacKnc_7a0fim-hZbaeUHIJ8gJaLN&index=8'">핀란드 학생들이 집에서 케이팝을 배운다?</div>
+                <div class="tutorialList" onclick="location.href='https://www.youtube.com/watch?v=Lq3_T8PScs0&list=PLK4BtacKnc_7a0fim-hZbaeUHIJ8gJaLN&index=9'">춤 왕초보를 위한 온라인 댄스클래스 6편</div>
+                <div class="tutorialList" onclick="location.href='https://www.youtube.com/watch?v=Lq3_T8PScs0&list=PLK4BtacKnc_7a0fim-hZbaeUHIJ8gJaLN&index=10'">그루브를 타고 싶을때 따라하세요｜ 춤 왕초보를 위한 온라인 댄스클래스 5편</div>
+                <div class="tutorialList" onclick="location.href='https://www.youtube.com/watch?v=Lq3_T8PScs0&list=PLK4BtacKnc_7a0fim-hZbaeUHIJ8gJaLN&index=11'">춤 왕초보를 위한 온라인 댄스클래스 4편 ｜느낌있게 골반 그루브 타는 법!</div>
+                
             </div>
             <!-- PLAYDANCE -->
             <div id="playDanceList">
@@ -64,8 +70,8 @@
                         <!-- 반복 -->
                 <%
 					for(int i = 0; i < list.size(); i++){
-					System.out.println("시퀀스 번호 : "+list.get(i).getSong_seq());
-					System.out.println("노래 제목 : "+list.get(i).getSong_title());
+					//System.out.println("시퀀스 번호 : "+list.get(i).getSong_seq());
+					//System.out.println("노래 제목 : "+list.get(i).getSong_title());
 					
 				%>
                         <!-- 노래1 -->
@@ -109,7 +115,7 @@ function sendData(i){
 	$("#img"+i).click(function(){
 		var d = document.getElementById("v"+i).value;
 		console.log(d);
-		const url = 'http://localhost:8082/Third_PJ/playdance.jsp?songdata='+d;
+		const url = 'http://59.0.236.167:8083/NamGongBulLak_FINAL/playdance.jsp?songdata='+d;
 		const encoded = encodeURI(url);
 		location.href= encoded;
 	});

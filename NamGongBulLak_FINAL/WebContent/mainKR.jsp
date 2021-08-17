@@ -53,7 +53,7 @@
 		ArrayList<MainRankingDTO> dto = dao.load_top3_acc(country);
 		
 		for(int i=0; i<dto.size(); i++){
-			System.out.println(dto.get(i).getNickname()+"/"+dto.get(i).getUser_accuracy());
+			//System.out.println(dto.get(i).getNickname()+"/"+dto.get(i).getUser_accuracy());
 		}
 		
 		String flag = "";
@@ -107,13 +107,13 @@
                         <div style="width: 15%; height: 100%;">
                             <div style="width: 3.75rem; height: 3.75rem; margin: 3.125rem 0  3.125rem 3.75rem;">
                                 <!-- 메달 이미지 -->
-                                <img src="./static/img/gold_medal.png" style="width: 100%; height: 100%;">
+                                <img src="./static/img/medal/gold.png" style="width: 100%; height: 100%;">
                             </div>
                         </div>
                         <div style="width: 25%; height: 100%;">
                             <div style="width: 10rem; height: 10rem; margin: 0 1.25rem;">
                                 <!-- 프로필 이미지 -->
-                                <img src="./data/profile_image/iu3.jpg" style="width: 100%; height: 100%; border: 0.0625rem solid white; border-radius: 50%;">
+                                <img src="./data/profile_image/<%= dto.get(0).getProfile_img() %>" style="width: 100%; height: 100%; border: 0.0625rem solid white; border-radius: 50%;">
                             </div>
                         </div>
                         <div style="width: 60%; height: 100%; display: flex; flex-direction: column; justify-content: center; align-items: flex-start;">
@@ -128,13 +128,13 @@
                         <div style="width: 15%; height: 100%;">
                             <div style="width: 3.75rem; height: 3.75rem; margin: 3.125rem 0  3.125rem 3.75rem;">
                                 <!-- 메달 이미지 -->
-                                <img src="./static/img/gold_medal.png" style="width: 100%; height: 100%;">
+                                <img src="./static/img/medal/silver.png" style="width: 100%; height: 100%;">
                             </div>
                         </div>
                         <div style="width: 25%; height: 100%;">
                             <div style="width: 10rem; height: 10rem; margin: 0 1.25rem;">
                                 <!-- 프로필 이미지 -->
-                                <img src="./data/profile_image/iu3.jpg" style="width: 100%; height: 100%; border: 0.0625rem solid white; border-radius: 50%;">
+                                <img src="./data/profile_image/<%= dto.get(1).getProfile_img() %>" style="width: 100%; height: 100%; border: 0.0625rem solid white; border-radius: 50%;">
                             </div>
                         </div>
                         <div style="width: 60%; height: 100%; display: flex; flex-direction: column; justify-content: center; align-items: flex-start;">
@@ -149,13 +149,13 @@
                         <div style="width: 15%; height: 100%;">
                             <div style="width: 3.75rem; height: 3.75rem; margin: 3.125rem 0  3.125rem 3.75rem;">
                                 <!-- 메달 이미지 -->
-                                <img src="./static/img/gold_medal.png" style="width: 100%; height: 100%;">
+                                <img src="./static/img/medal/bronze.png" style="width: 100%; height: 100%;">
                             </div>
                         </div>
                         <div style="width: 25%; height: 100%;">
                             <div style="width: 10rem; height: 10rem; margin: 0 1.25rem;">
                                 <!-- 프로필 이미지 -->
-                                <img src="./data/profile_image/iu3.jpg" style="width: 100%; height: 100%; border: 0.0625rem solid white; border-radius: 50%;">
+                                <img src="./data/profile_image/<%= dto.get(2).getProfile_img() %>" style="width: 100%; height: 100%; border: 0.0625rem solid white; border-radius: 50%;">
                             </div>
                         </div>
                         <div style="width: 60%; height: 100%; display: flex; flex-direction: column; justify-content: center; align-items: flex-start;">
@@ -168,7 +168,7 @@
             </div>
             <!-- 웹페이지 소개글 이미지 -->
             <div style="width: 50%; height: 100%;">
-                <img src="./static/img/main_sample3.png" style="height: 53rem; width: 100%;">
+                <img src="./static/img/imgs/main_intro.png" style="height: 53rem; width: 100%;">
             </div>
         </div>
     </div>

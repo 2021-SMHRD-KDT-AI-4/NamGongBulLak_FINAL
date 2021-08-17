@@ -38,8 +38,8 @@
             <div style="width: 8.25rem;">
                 <div style="height: 20rem;"></div>
                 <!-- 노래별, 국가별 순위 버튼 -->
-                <input type="button" value="Song" style="margin-bottom: 2rem; width: 6.25rem;" onclick="location.href='ranking_songKR.jsp'">
-                <input type="button" value="Country" style="margin-bottom: 2rem; width: 8rem;" onclick="location.href='ranking_countryKR.jsp'">
+                <input type="button" value="Song" style="font-size: 1.2rem; border-radius: 1rem; border: 0.0625rem solid white; color: white; background-color: #707070; height: 2.5rem; margin-bottom: 2rem; width: 6.25rem; " onclick="location.href='ranking_songKR.jsp'">
+                <input type="button" value="Country" style="font-size: 1.2rem; border-radius: 1rem; border: 0.0625rem solid white; color: white; background-color: black; height: 2.5rem; margin-bottom: 2rem; width: 8rem;" onclick="location.href='ranking_countryKR.jsp'">
             </div>
             <div style="width: 38.25rem;">
                 <div style="height: 17.5rem;">

@@ -29,7 +29,7 @@ body {
     height: auto;
     width: auto;
     margin: auto;
-    background-image: url('../img/bts.jpg');
+    background-image: url('../img/imgs/bts.jpg');
     object-fit:cover;
     color: white;
     overflow: hidden;
@@ -108,6 +108,7 @@ input[id="menuicon"]:checked + label + div div.menu { visibility: visible; displ
     margin-top: 12.4375rem;
     font-size: 1.2rem;
     display: none;
+    overflow : overlay;
 }
 .tutorialList {
     height: 2.5rem;
@@ -133,7 +134,7 @@ input[id="menuicon"]:checked + label + div div.menu { visibility: visible; displ
 #rankingList {
     height: 5rem;
     text-align: left;
-    margin-top: 26.1875rem;
+    margin-top: 23.1875rem;
     font-size: 1.2rem;
     display: none;
 }

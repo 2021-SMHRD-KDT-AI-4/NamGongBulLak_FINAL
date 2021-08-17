@@ -16,9 +16,9 @@
 <%
 MemberDTO info = (MemberDTO)session.getAttribute("info");
 %>
-    <div style="background-color: rgba(0,0,0,0.5); width: 100%; height: 7.5rem; color: white; display: flex; justify-content: space-between; align-items: center;">
+    <div style="background-color: rgba(0,0,0,0.5); width: 100%; height: 7.5rem; color: white; display: flex; align-items: center;">
         <!-- 메뉴 버튼 -->
-        <div style="width: 30vw; height: 2.5rem; margin: 0 1rem;">
+        <div style="width: 55.25rem; height: 2.5rem; margin-left: 1rem">
             <input type="checkbox" id="menuicon">
             <label for="menuicon">
                 <span></span>
@@ -29,15 +29,15 @@ MemberDTO info = (MemberDTO)session.getAttribute("info");
             <div id="menu"></div>
         </div>
         <!-- 네비게이션 로고 -->
-        <div style="width: 30vw; height: auto;">
-            <a href="./mainKR.jsp"><img src="./static/img/kdcc-logo.png" style="width: 7.5rem; height: 7.5rem;"></a>
+        <div style="width: 7.5rem; height: 7.5rem;">
+            <a href="./mainKR.jsp"><img src="./static/img/imgs/logo2.png" style="width: 100%; height: 100%;"></a>
         </div>
         <!-- 네비게이션 버튼들 -->
-        <div id="d1" style="width: 30vw; height: auto; display: flex; align-items: center; justify-content: flex-end; font-family: 'Bangtan';">
+        <div id="d1" style="width: 56.25rem; height: 7.5rem; display: flex; align-items: center; justify-content: flex-end; font-family: 'Bangtan';">
             <!-- 로그인 했을 시 -->
             <%if(info!=null){ %>
             <a id="na1" href="./mypageKR.jsp" style="margin: 0 1rem;">마이페이지</a>
-            <a id="na2" href="http://localhost:8082/Third_PJ/Logoutservice?a=KR" style="margin: 0 1rem;">로그아웃</a>
+            <a id="na2" href="./Logoutservice?a=KR" style="margin: 0 1rem;">로그아웃</a>
              <%} %>
             <!-- 로그인 안했을 시 -->
             <%if(info==null){ %>

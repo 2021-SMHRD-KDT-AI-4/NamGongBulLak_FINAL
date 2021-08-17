@@ -50,6 +50,7 @@
                 	}
                 %>
             </div>
+            <br>
             <div style="font-size: 1.6rem; padding: 0.5rem 0;">보유 중인 버츄얼페이스</div>
             <div style="width: 26.25rem; max-height: 26rem; border: 0.125rem solid #fff; border-radius: 1rem; margin: 0 auto; overflow: overlay; display: grid; grid-template-columns: 1fr 1fr 1fr;">
                 <!-- 보유 중인 버츄얼페이스 -->

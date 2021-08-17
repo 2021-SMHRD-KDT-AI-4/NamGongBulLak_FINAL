@@ -26,7 +26,7 @@
         <!-- 메인 내용 -->
         <div style="height: 6.25rem;"></div>
         <!-- 로고 -->
-        <img src="./static/img/kdcc-logo.png" style="height: 22.5rem; width: 22.5rem;">
+        <img src="./static/img/imgs/logo2.png" style="height: 22.5rem; width: 22.5rem;">
         <div style="height: 1rem;"></div>
         <!-- 로그인 폼 -->
         <form action="Loginservice">

@@ -108,7 +108,7 @@ public class MainRankingDAO {
 		try {
 			conn();
 			
-			String sql = "select distinct ms.nickname, my.user_accuracy, my.season from MEMBERS ms, mydanceinfos my where ms.id=my.id and ms.country=? order by my.user_accuracy desc";
+			String sql = "select distinct ms.nickname, ms.profile_img, my.user_accuracy, my.season from MEMBERS ms, mydanceinfos my where ms.id=my.id and ms.country=? order by my.user_accuracy desc";
 			
 			ps = conn.prepareStatement(sql);
 			
@@ -123,9 +123,10 @@ public class MainRankingDAO {
 				int acc = rs.getInt("user_accuracy");
 				
 				String nickname = rs.getString("nickname");
+				String profile_img = rs.getString("profile_img");
 				String season = rs.getString("season");
 				
-				MainRankingDTO dto = new MainRankingDTO(nickname,acc,season);
+				MainRankingDTO dto = new MainRankingDTO(nickname, profile_img, acc, season);
 				
 				list.add(dto);
 				cnt+=1;
