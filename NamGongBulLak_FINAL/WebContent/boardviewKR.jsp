@@ -19,7 +19,7 @@
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
     <script type="text/javascript">   
         $(document).ready(function() {
-			$("#navi").load("./navigation.html");
+			$("#navi").load("./navigationKR.jsp");
 		});
         sessionStorage.clear();
         sessionStorage.setItem("boardv", "boardvKR");
@@ -56,6 +56,8 @@
 			System.out.println("업로드 실패");
 		}
 	} catch(NumberFormatException e) {
+		
+	} catch(NullPointerException e) {
 		
 	}
 	System.out.println("아이디 : " + req_id);
@@ -122,7 +124,7 @@
 								<!-- 사용자 프로필 이미지 -->
                                 <img src="./data/profile_image/<%= commentList.get(i).getCommenter_img() %>" style="width: 100%; height: 100%; border-radius: 50%;">
                             </div>
-                            <div style="text-align: left; background-color: #707070; border-radius: 1rem; font-size: 1.0rem; max-width: 21.125rem; padding: 0.5rem; margin: 1rem 0.5rem 0 0.5rem; height: fit-content;">
+                            <div style="text-align: left; background-color: #707070; border-radius: 1rem; font-size: 1.0rem; max-width: 18.0rem; padding: 0.5rem; margin: 1rem 0.5rem 0 0.5rem; height: fit-content;">
 								<!-- 사용자 닉네임 -->
                                 <span style="font-family: 'GmarketSansTTFBold';"><%= commentList.get(i).getCommenter() %></span><br>
 								<!-- 댓글 내용 -->
@@ -181,6 +183,7 @@
 			success: function(data) {
 				console.log('성공');
 				$('#comment').load(window.location.href + ' #comment');
+				$('#comments').innerHTML = "";
 			},
 			error : function(a, b, c){
 				//통신 실패시 발생하는 함수(콜백)

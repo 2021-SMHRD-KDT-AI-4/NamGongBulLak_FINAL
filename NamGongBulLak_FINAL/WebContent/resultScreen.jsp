@@ -181,7 +181,7 @@ String num = request.getParameter("num");
    }
    
    function rt(){
-      const url = "http://localhost:8082/Third_PJ/playdance.jsp?songdata=<%=singer%>/<%=title%>/<%=albumImg%>";
+      const url = "http://localhost:8083/NamGongBulLak_FINAL/playdance.jsp?songdata=<%=singer%>/<%=title%>/<%=albumImg%>";
       const encoded = encodeURI(url);
       location.replace(encoded); 
    }

@@ -55,16 +55,23 @@
 		//System.out.println("1 : " + embList[0] + "/ 2 : " + embList[1] + "/ 3 : " + embList[2]);
 		try{
 			data = request.getParameter("data").split("/");
+		}catch(NullPointerException e){
+			System.out.println("data가 없습니다");
+		}
+		try{
 			data2 = request.getParameter("data2");
 		}catch(NullPointerException e){
 			System.out.println("data가 없습니다");
+			System.out.println("======= data2" + data2);
 		}
 		
 		if(data!=null){
 			embDAO.updateEmblem(data[0], data[1], data[2], memInfo.getId());
 			embList = embDAO.selectEmblem(id);
-			proDAO.updateVirtualFace(data2, id);
-			selectedList = proDAO.selectedVirtualFace(id);
+		}
+		if(data2 != null) {
+		proDAO.updateVirtualFace(data2, id);
+		selectedList = proDAO.selectedVirtualFace(id);
 		}
 	%>
 	<div style="background-color: rgba(0, 0, 0, 0.5); width: 100%; height: 100vh;" class="container">
@@ -136,7 +143,7 @@
                           	<%
                           		if (!(selectedList[0] == null)) {
                           	%>
-                          		<div style="width: 3.75rem; height: 3.75rem;">
+                          		<div style="width: 3.75rem; height: 3.75rem; background-color: white; border: 0.0625rem solid black; border-radius: 1rem;">
                             		<img src="./static/img/<%= selectedList[0] %>" style="height: 100%; width: 100%; border-radius: 1rem;">
                           		</div>
                           	<%
@@ -154,7 +161,10 @@
 						<div style="margin-bottom: 1.25rem; margin-top: 1.25rem;"><%= memInfo.getId() %></div>
 						<div style="margin-bottom: 0.25rem"><%= memInfo.getNickname() %></div>
 						<div style="width: 8.5rem; height:5.5rem; margin: auto;"><img src="./static/img/<%= memInfo.getCountry() %>.jpg" style="width: 100%; height: 100%;"><%-- <%= country %> --%></div>
-						<div style="margin-top: 0.25rem"><%= memInfo.getCountry() %></div>
+						<div style="margin-top: 0.25rem">
+							<!-- <%= memInfo.getCountry() %> -->
+							KOREA
+						</div>
 					</div>
 					<div style="width: 15.25rem; height: 100%; ">
 						<!-- 회원등급 -->

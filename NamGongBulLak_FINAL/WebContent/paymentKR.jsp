@@ -21,7 +21,7 @@ String price = request.getParameter("price");
             <div style="width: 22.5rem; height: 14rem; background-color: #707070; border: 0.0625rem solid white; border-radius: 1rem; margin: auto;">
                 <div style="height: 3.75rem;"></div>
                 <div style="height: 3.75rem; color: white;">
-                    <span style="font-family: 'GmarketSansTTFBold';">선택한 상품</span>을(를)<br>구매하시겠습니까?
+                    <span style="font-family: 'GmarketSansTTFBold';">찾아줄개</span>을(를)<br>구매하시겠습니까?
                 </div>
                 <div style="height: 2rem"></div>
                 <div style="width: 13.75rem; height: 2rem; display: flex; flex-direction: row; justify-content: space-between; margin: auto;">

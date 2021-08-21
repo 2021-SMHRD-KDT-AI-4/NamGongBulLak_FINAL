@@ -196,10 +196,10 @@
                     <div class='product' style="width: 12.5rem; height: 12.5rem; border-bottom: 0.0625rem solid white; background-color: rgba(255,255,255,0.7); border-top-left-radius: 1rem; border-top-right-radius: 1rem;">
                         <div style="width: 7.5rem; height: 7.5rem; margin: 0 auto 1rem auto; padding-top: 1.25rem;">
                             <!-- 상품 이미지 -->
-                            <img src="./static/img/virtual_face_1.png" style="width: 100%; height: 100%;">
+                            <img src="./static/img/virtual_face_2.png" style="width: 100%; height: 100%;">
                         </div>
                         <!-- 상품 이름 -->
-                        <span style="font-size: 1.2rem; color: black;" id="vf2" value="vf2">츄르를 좋아해</span>
+                        <span style="font-size: 1.2rem; color: black;" id="vf2" value="vf2">나만 없어 고양이</span>
                     </div>
                     <!-- 상품 hover 시 -->
                     <div class="hoverProduct" style="height: 12.5rem; border-bottom: 0.0625rem solid white; background-color: rgba(255,255,255,0.5); border-top-left-radius: 1rem; border-top-right-radius: 1rem;">
@@ -225,10 +225,10 @@
                     <div class='product' style="width: 12.5rem; height: 12.5rem; border-bottom: 0.0625rem solid white; background-color: rgba(255,255,255,0.7); border-top-left-radius: 1rem; border-top-right-radius: 1rem;">
                         <div style="width: 7.5rem; height: 7.5rem; margin: 0 auto 1rem auto; padding-top: 1.25rem;">
                             <!-- 상품 이미지 -->
-                            <img src="./static/img/virtual_face_1.png" style="width: 100%; height: 100%;">
+                            <img src="./static/img/virtual_face_3.png" style="width: 100%; height: 100%;">
                         </div>
                         <!-- 상품 이름 -->
-                        <span style="font-size: 1.2rem; color: black;" id="vf3" value="vf3">츄르를 좋아해</span>
+                        <span style="font-size: 1.2rem; color: black;" id="vf3" value="vf3">햄스터 아님 고양이</span>
                     </div>
                     <!-- 상품 hover 시 -->
                     <div class="hoverProduct" style="height: 12.5rem; border-bottom: 0.0625rem solid white; background-color: rgba(255,255,255,0.5); border-top-left-radius: 1rem; border-top-right-radius: 1rem;">
@@ -254,10 +254,10 @@
                     <div class='product' style="width: 12.5rem; height: 12.5rem; border-bottom: 0.0625rem solid white; background-color: rgba(255,255,255,0.7); border-top-left-radius: 1rem; border-top-right-radius: 1rem;">
                         <div style="width: 7.5rem; height: 7.5rem; margin: 0 auto 1rem auto; padding-top: 1.25rem;">
                             <!-- 상품 이미지 -->
-                            <img src="./static/img/virtual_face_1.png" style="width: 100%; height: 100%;">
+                            <img src="./static/img/virtual_face_4.png" style="width: 100%; height: 100%;">
                         </div>
                         <!-- 상품 이름 -->
-                        <span style="font-size: 1.2rem; color: black;" id="vf4" value="vf4">츄르를 좋아해</span>
+                        <span style="font-size: 1.2rem; color: black;" id="vf4" value="vf4">찾아줄개</span>
                     </div>
                     <!-- 상품 hover 시 -->
                     <div class="hoverProduct" style="height: 12.5rem; border-bottom: 0.0625rem solid white; background-color: rgba(255,255,255,0.5); border-top-left-radius: 1rem; border-top-right-radius: 1rem;">
@@ -283,10 +283,10 @@
                     <div class='product' style="width: 12.5rem; height: 12.5rem; border-bottom: 0.0625rem solid white; background-color: rgba(255,255,255,0.7); border-top-left-radius: 1rem; border-top-right-radius: 1rem;">
                         <div style="width: 7.5rem; height: 7.5rem; margin: 0 auto 1rem auto; padding-top: 1.25rem;">
                             <!-- 상품 이미지 -->
-                            <img src="./static/img/virtual_face_1.png" style="width: 100%; height: 100%;">
+                            <img src="./static/img/virtual_face_5.png" style="width: 100%; height: 100%;">
                         </div>
                         <!-- 상품 이름 -->
-                        <span style="font-size: 1.2rem; color: black;" id="vf5" value="vf5">츄르를 좋아해</span>
+                        <span style="font-size: 1.2rem; color: black;" id="vf5" value="vf5">춤추는곰돌</span>
                     </div>
                     <!-- 상품 hover 시 -->
                     <div class="hoverProduct" style="height: 12.5rem; border-bottom: 0.0625rem solid white; background-color: rgba(255,255,255,0.5); border-top-left-radius: 1rem; border-top-right-radius: 1rem;">
@@ -312,10 +312,10 @@
                     <div class='product' style="width: 12.5rem; height: 12.5rem; border-bottom: 0.0625rem solid white; background-color: rgba(255,255,255,0.7); border-top-left-radius: 1rem; border-top-right-radius: 1rem;">
                         <div style="width: 7.5rem; height: 7.5rem; margin: 0 auto 1rem auto; padding-top: 1.25rem;">
                             <!-- 상품 이미지 -->
-                            <img src="./static/img/virtual_face_1.png" style="width: 100%; height: 100%;">
+                            <img src="./static/img/virtual_face_6.png" style="width: 100%; height: 100%;">
                         </div>
                         <!-- 상품 이름 -->
-                        <span style="font-size: 1.2rem; color: black;" id="vf6" value="vf6">츄르를 좋아해</span>
+                        <span style="font-size: 1.2rem; color: black;" id="vf6" value="vf6">토끼가 껑춤껑춤</span>
                     </div>
                     <!-- 상품 hover 시 -->
                     <div class="hoverProduct" style="height: 12.5rem; border-bottom: 0.0625rem solid white; background-color: rgba(255,255,255,0.5); border-top-left-radius: 1rem; border-top-right-radius: 1rem;">
@@ -341,10 +341,10 @@
                     <div class='product' style="width: 12.5rem; height: 12.5rem; border-bottom: 0.0625rem solid white; background-color: rgba(255,255,255,0.7); border-top-left-radius: 1rem; border-top-right-radius: 1rem;">
                         <div style="width: 7.5rem; height: 7.5rem; margin: 0 auto 1rem auto; padding-top: 1.25rem;">
                             <!-- 상품 이미지 -->
-                            <img src="./static/img/virtual_face_1.png" style="width: 100%; height: 100%;">
+                            <img src="./static/img/virtual_face_7.png" style="width: 100%; height: 100%;">
                         </div>
                         <!-- 상품 이름 -->
-                        <span style="font-size: 1.2rem; color: black;" id="vf7" value="vf7">츄르를 좋아해</span>
+                        <span style="font-size: 1.2rem; color: black;" id="vf7" value="vf7">내가 그린 기린 그림</span>
                     </div>
                     <!-- 상품 hover 시 -->
                     <div class="hoverProduct" style="height: 12.5rem; border-bottom: 0.0625rem solid white; background-color: rgba(255,255,255,0.5); border-top-left-radius: 1rem; border-top-right-radius: 1rem;">
@@ -370,10 +370,10 @@
                     <div class='product' style="width: 12.5rem; height: 12.5rem; border-bottom: 0.0625rem solid white; background-color: rgba(255,255,255,0.7); border-top-left-radius: 1rem; border-top-right-radius: 1rem;">
                         <div style="width: 7.5rem; height: 7.5rem; margin: 0 auto 1rem auto; padding-top: 1.25rem;">
                             <!-- 상품 이미지 -->
-                            <img src="./static/img/virtual_face_1.png" style="width: 100%; height: 100%;">
+                            <img src="./static/img/virtual_face_8.png" style="width: 100%; height: 100%;">
                         </div>
                         <!-- 상품 이름 -->
-                        <span style="font-size: 1.2rem; color: black;" id="vf8" value="vf8">츄르를 좋아해</span>
+                        <span style="font-size: 1.2rem; color: black;" id="vf8" value="vf8">마우스패드 아니고 팬더</span>
                     </div>
                     <!-- 상품 hover 시 -->
                     <div class="hoverProduct" style="height: 12.5rem; border-bottom: 0.0625rem solid white; background-color: rgba(255,255,255,0.5); border-top-left-radius: 1rem; border-top-right-radius: 1rem;">
@@ -399,10 +399,10 @@
                     <div class='product' style="width: 12.5rem; height: 12.5rem; border-bottom: 0.0625rem solid white; background-color: rgba(255,255,255,0.7); border-top-left-radius: 1rem; border-top-right-radius: 1rem;">
                         <div style="width: 7.5rem; height: 7.5rem; margin: 0 auto 1rem auto; padding-top: 1.25rem;">
                             <!-- 상품 이미지 -->
-                            <img src="./static/img/virtual_face_1.png" style="width: 100%; height: 100%;">
+                            <img src="./static/img/virtual_face_9.png" style="width: 100%; height: 100%;">
                         </div>
                         <!-- 상품 이름 -->
-                        <span style="font-size: 1.2rem; color: black;" id="vf9" value="vf9">츄르를 좋아해</span>
+                        <span style="font-size: 1.2rem; color: black;" id="vf9" value="vf9">어디서 많이 봤는데</span>
                     </div>
                     <!-- 상품 hover 시 -->
                     <div class="hoverProduct" style="height: 12.5rem; border-bottom: 0.0625rem solid white; background-color: rgba(255,255,255,0.5); border-top-left-radius: 1rem; border-top-right-radius: 1rem;">
@@ -428,10 +428,10 @@
                     <div class='product' style="width: 12.5rem; height: 12.5rem; border-bottom: 0.0625rem solid white; background-color: rgba(255,255,255,0.7); border-top-left-radius: 1rem; border-top-right-radius: 1rem;">
                         <div style="width: 7.5rem; height: 7.5rem; margin: 0 auto 1rem auto; padding-top: 1.25rem;">
                             <!-- 상품 이미지 -->
-                            <img src="./static/img/virtual_face_1.png" style="width: 100%; height: 100%;">
+                            <img src="./static/img/virtual_face_10.png" style="width: 100%; height: 100%;">
                         </div>
                         <!-- 상품 이름 -->
-                        <span style="font-size: 1.2rem; color: black;" id="vf10" value="vf10">츄르를 좋아해</span>
+                        <span style="font-size: 1.2rem; color: black;" id="vf10" value="vf10">너는 나의 포로</span>
                     </div>
                     <!-- 상품 hover 시 -->
                     <div class="hoverProduct" style="height: 12.5rem; border-bottom: 0.0625rem solid white; background-color: rgba(255,255,255,0.5); border-top-left-radius: 1rem; border-top-right-radius: 1rem;">

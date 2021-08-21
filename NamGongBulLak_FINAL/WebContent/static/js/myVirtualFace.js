@@ -24,6 +24,6 @@ for (const virtualFace of virtualFaceList) {
    });
 };
 
-function save() {
+function saveVir() {
    window.location.href = "mypageKR.jsp?data2=" + selectedImg.getAttribute("src").split("/")[3];
 }

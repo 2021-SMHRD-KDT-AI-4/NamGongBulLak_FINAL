@@ -276,10 +276,10 @@ if(song_data!=null){
 	    			//const encoded = encodeURI(url);
 	    	    	//window.open(encoded);
     	    	console.log("1");
-    	    	const url1 = "http://59.0.236.167:8083/NamGongBulLak_FINAL/resultScreen.jsp?score="+score+"&mgdgrper="+m+"/"+gd+"/"+gr+"/"+per+"&songdata="+songdata+"&num=1";
+    	    	const url1 = "http://localhost:8083/NamGongBulLak_FINAL/resultScreen.jsp?score="+score+"&mgdgrper="+m+"/"+gd+"/"+gr+"/"+per+"&songdata="+songdata+"&num=1";
                 const encoded1 = encodeURI(url1);
     	    	
-    	    	const url = "http://59.0.236.167:8083/NamGongBulLak_FINAL/resultScreen.jsp?score="+score+"&mgdgrper="+m+"/"+gd+"/"+gr+"/"+per+"&songdata="+songdata;
+    	    	const url = "http://localhost:8083/NamGongBulLak_FINAL/resultScreen.jsp?score="+score+"&mgdgrper="+m+"/"+gd+"/"+gr+"/"+per+"&songdata="+songdata;
 				const encoded = encodeURI(url);
     	    		//window.open("http://localhost:8081/Third_PJs/RankingService?score="+score+"&mgdgrper="+m+"/"+gd+"/"+gr+"/"+per+"&songdata="+songdata);
     	    	

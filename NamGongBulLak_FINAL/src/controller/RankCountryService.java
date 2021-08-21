@@ -20,7 +20,6 @@ public class RankCountryService extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-	
 		String country = request.getParameter("country");
 		System.out.println(country);
 		RankingCountryDTO dto = new RankingCountryDTO(country);

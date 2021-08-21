@@ -30,7 +30,7 @@ MemberDTO info = (MemberDTO)session.getAttribute("info");
         </div>
         <!-- 네비게이션 로고 -->
         <div style="width: 30vw; height: auto;">
-            <a href="./mainEN.jsp"><img src="./static/img/kdcc-logo.png" style="width: 7.5rem; height: 7.5rem;"></a>
+            <a href="./mainEN.jsp"><img src="./static/img/imgs/logo2.png" style="width: 7.5rem; height: 7.5rem;"></a>
         </div>
         <!-- 네비게이션 버튼들 -->
         <div id="d1" style="width: 30vw; height: auto; display: none; align-items: center; justify-content: flex-end; font-family: 'Bangtan';">
@@ -88,31 +88,31 @@ MemberDTO info = (MemberDTO)session.getAttribute("info");
 	
 	function move(){
 		if(store=="storeEN"){
-			location.href="http://localhost:8082/Third_PJ/storeKR.jsp";
+			location.href="http://localhost:8083/NamGongBulLak_FINAL/storeKR.jsp";
 		}
 		if(join=="joinEN"){
-			location.href="http://localhost:8082/Third_PJ/joinKR.jsp";
+			location.href="http://localhost:8083/NamGongBulLak_FINAL/joinKR.jsp";
 		}
 		if(main=="mainEN"){
-			location.href="http://localhost:8082/Third_PJ/mainKR.jsp";
+			location.href="http://localhost:8083/NamGongBulLak_FINAL/mainKR.jsp";
 		}
 		if(login=="loginEN"){
-			location.href="http://localhost:8082/Third_PJ/loginKR.jsp";
+			location.href="http://localhost:8083/NamGongBulLak_FINAL/loginKR.jsp";
 		}
 		if(mypage=="mypageEN"){
-			location.href="http://localhost:8082/Third_PJ/mypageKR.jsp";
+			location.href="http://localhost:8083/NamGongBulLak_FINAL/mypageKR.jsp";
 		}
 		if(r_country=="R_countryEN"){
-			location.href="http://localhost:8082/Third_PJ/ranking_countryKR.jsp";
+			location.href="http://localhost:8083/NamGongBulLak_FINAL/ranking_countryKR.jsp";
 		}
 		if(r_song=="R_songEN"){
-			location.href="http://localhost:8082/Third_PJ/ranking_songKR.jsp";
+			location.href="http://localhost:8083/NamGongBulLak_FINAL/ranking_songKR.jsp";
 		}
 		if(board=="boardEN"){
-			location.href="http://localhost:8082/Third_PJ/boardKR.jsp";
+			location.href="http://localhost:8083/NamGongBulLak_FINAL/boardKR.jsp";
 		}
 		if(boardw=="boardwEN"){
-			location.href="http://localhost:8082/Third_PJ/boardwriteKR.jsp";
+			location.href="http://localhost:8083/NamGongBulLak_FINAL/boardwriteKR.jsp";
 		}
 	}
     

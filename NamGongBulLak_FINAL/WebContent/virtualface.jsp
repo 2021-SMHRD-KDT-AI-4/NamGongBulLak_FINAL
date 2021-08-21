@@ -76,7 +76,7 @@
                 
             </div>
             <!-- 저장하기 버튼 -->
-            <input type="button" value="저장하기" id="saveVirtualFace" onclick="save();" style="margin-top: 0.5rem;">
+            <input type="button" value="저장하기" id="saveVirtualFace" onclick="saveVir();" style="margin-top: 0.5rem;">
         </div>
     </div>
 </body>

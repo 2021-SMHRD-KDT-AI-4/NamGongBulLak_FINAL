@@ -90,31 +90,31 @@ MemberDTO info = (MemberDTO)session.getAttribute("info");
 	
 	function move(){
 		if(join=="storeKR"){
-			location.href="http://localhost:8082/Third_PJ/storeEN.jsp";
+			location.href="http://localhost:8083/NamGongBulLak_FINAL/storeEN.jsp";
 		}
 		if(join=="joinKR"){
-			location.href="http://localhost:8082/Third_PJ/joinEN.jsp";
+			location.href="http://localhost:8083/NamGongBulLak_FINAL/joinEN.jsp";
 		}
 		if(main=="mainKR"){
-			location.href="http://localhost:8082/Third_PJ/mainEN.jsp";
+			location.href="http://localhost:8083/NamGongBulLak_FINAL/mainEN.jsp";
 		}
 		if(login=="loginKR"){
-			location.href="http://localhost:8082/Third_PJ/loginEN.jsp";
+			location.href="http://localhost:8083/NamGongBulLak_FINAL/loginEN.jsp";
 		}
 		if(mypage=="mypageKR"){
-			location.href="http://localhost:8082/Third_PJ/mypageEN.jsp";
+			location.href="http://localhost:8083/NamGongBulLak_FINAL/mypageEN.jsp";
 		}
 		if(r_country=="R_countryKR"){
-			location.href="http://localhost:8082/Third_PJ/ranking_countryEN.jsp";
+			location.href="http://localhost:8083/NamGongBulLak_FINAL/ranking_countryEN.jsp";
 		}
 		if(r_song=="R_songKR"){
-			location.href="http://localhost:8082/Third_PJ/ranking_songEN.jsp";
+			location.href="http://localhost:8083/NamGongBulLak_FINAL/ranking_songEN.jsp";
 		}
 		if(board=="boardKR"){
-			location.href="http://localhost:8082/Third_PJ/boardEN.jsp";
+			location.href="http://localhost:8083/NamGongBulLak_FINAL/boardEN.jsp";
 		}
 		if(boardw=="boardwKR"){
-			location.href="http://localhost:8082/Third_PJ/boardwriteEN.jsp";
+			location.href="http://localhost:8083/NamGongBulLak_FINAL/boardwriteEN.jsp";
 		}
 	}
     
